@@ -1,0 +1,9 @@
+=== ANALISIS DEL SUBGRAFO INDUCIDO ===
+
+Nodos Q01: 111
+Nodos Q06: 107
+Nodos subgrafo: 216
+Aristas subgrafo: 222
+Peso MST (Kruskal): 953
+Tiene ciclos: SI
+Es DAG: NO
