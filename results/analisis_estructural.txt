@@ -1,0 +1,16 @@
+=== ANALISIS ESTRUCTURAL DEL GRAFO ===
+
+Numero de nodos: 1088092
+Numero de aristas: 1541898
+Componentes conexas: 206
+Nodos en CC principal: 1087562
+Grado promedio: 2.83413
+Nodo mayor grado (id SNAP): 674502 (grado=9)
+Diametro aproximado: 592
+
+=== COMPARACION CON VALORES SNAP ===
+Nodos          | SNAP: 1088092   | Obtenido: 1088092
+Aristas        | SNAP: 1541898   | Obtenido: 1541898
+CC principal   | SNAP: 1087562   | Obtenido: 1087562
+Grado promedio | SNAP: ~2.83     | Obtenido: 2.83413
+Diametro       | SNAP: 782       | Obtenido: 592
