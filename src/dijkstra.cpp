@@ -6,6 +6,8 @@
 
 const int INF = std::numeric_limits<int>::max();
 
+typedef std::pair<int,int> pii;
+
 std::vector<int> dijkstra(const Graph& g,
                            int origen,
                            std::vector<int>& prev,
@@ -15,17 +17,13 @@ std::vector<int> dijkstra(const Graph& g,
     prev.assign(g.n, -1);
     nodosExplorados = 0;
 
-    std::priority_queue
-        std::pair<int,int>,
-        std::vector<std::pair<int,int>>,
-        std::greater<std::pair<int,int>>
-    > heap;
+    std::priority_queue<pii, std::vector<pii>, std::greater<pii>> heap;
 
     dist[origen] = 0;
-    heap.push({0, origen});
+    heap.push(pii(0, origen));
 
     while (!heap.empty()) {
-        auto top = heap.top();
+        pii top = heap.top();
         heap.pop();
         int d = top.first;
         int u = top.second;
@@ -34,13 +32,13 @@ std::vector<int> dijkstra(const Graph& g,
 
         nodosExplorados++;
 
-        for (auto& vecino : g.adj[u]) {
-            int v = vecino.first;
-            int w = vecino.second;
+        for (int i = 0; i < (int)g.adj[u].size(); i++) {
+            int v = g.adj[u][i].first;
+            int w = g.adj[u][i].second;
             if (dist[u] != INF && dist[u] + w < dist[v]) {
                 dist[v] = dist[u] + w;
                 prev[v] = u;
-                heap.push({dist[v], v});
+                heap.push(pii(dist[v], v));
             }
         }
     }
